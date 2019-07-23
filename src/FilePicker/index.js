@@ -1,0 +1,86 @@
+import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { FaTimes } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import FileInput from '../FileInput';
+import './Index.css';
+
+export default function FilePicker(props) {
+  const [fileName, setFileName] = useState(null);
+
+  const {
+    className,
+    style, buttonText, onError, onChange, maxSize, extensions, onClear, triggerReset
+  } = props;
+
+
+  useEffect(() => {
+    clearFile(
+    )
+  }, [triggerReset]);
+
+
+
+  function clearFile() {
+    setFileName(null);
+    onClear ? onClear(null) : '';
+  }
+
+  function validate(file) {
+    if (!file) {
+      onError('Failed to upload a file.');
+      return;
+    }
+    // convert maxSize from megabytes to bytes
+    const maxBytes = maxSize * 1000000;
+
+    if (file.size > maxBytes) {
+      onError(`File size must be less than ${maxSize} MB.`);
+      return;
+    }
+    // return native file object
+    setFileName(file.name);
+    if (extensions) {
+      const uploadedFileExt = file.type;
+      const isValidFileExt = extensions
+        .map(ext => ext.toLowerCase())
+        .includes(uploadedFileExt);
+
+      if (!isValidFileExt) {
+        onError(`Must upload a file of types: ${extensions.join(' or ')}`);
+        return;
+      }
+    }
+    onChange(file);
+  }
+
+  return (
+    <div style={style} className={className || 'container'}>
+      <FileInput onChange={validate}>
+        <div className="input-button" type="button">
+          {buttonText}
+        </div>
+      </FileInput>
+      {fileName ? (
+        <div >
+          <div style={{ float: 'left' }}>{fileName}</div>
+          <div style={{ float: 'right', marginLeft: 5, paddingTop: 3 }} onClick={clearFile}><FaTimes className="icon" /></div>
+        </div>
+      ) : <div> &nbsp; </div>}
+    </div>
+  );
+}
+
+FilePicker.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  onError: PropTypes.func.isRequired,
+  maxSize: PropTypes.number,
+  extensions: PropTypes.array,
+  validateContent: PropTypes.func,
+  style: PropTypes.object,
+}
+
+FilePicker.defaultProps = {
+  maxSize: 2,
+  extensions: ['application/pdf'],
+}
