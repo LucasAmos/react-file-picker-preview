@@ -1,11 +1,10 @@
 // external imports
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class FileInput extends React.Component {
   constructor(props) {
     super(props)
-
     this._handleUpload = this._handleUpload.bind(this)
   }
 

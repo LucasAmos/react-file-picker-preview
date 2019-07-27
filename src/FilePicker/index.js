@@ -9,22 +9,21 @@ export default function FilePicker(props) {
   const [fileName, setFileName] = useState(null);
 
   const {
-    className,
-    style, buttonText, onError, onChange, maxSize, extensions, onClear, triggerReset
+    className, style, buttonText, onError, onChange, maxSize,
+    extensions, onClear, triggerReset, children,
   } = props;
-
-
-  useEffect(() => {
-    clearFile(
-    )
-  }, [triggerReset]);
-
-
 
   function clearFile() {
     setFileName(null);
-    onClear ? onClear(null) : '';
+    if (onClear) {
+      onClear(null);
+    }
   }
+
+  useEffect(() => {
+    clearFile(
+    );
+  }, [triggerReset]);
 
   function validate(file) {
     if (!file) {
@@ -57,16 +56,25 @@ export default function FilePicker(props) {
   return (
     <div style={style} className={className || 'container'}>
       <FileInput onChange={validate}>
-        <div className="input-button" type="button">
-          {buttonText}
-        </div>
+        {buttonText === undefined ? children
+          : (
+            <div className="input-button" type="button">
+              {buttonText}
+            </div>
+          )
+        }
       </FileInput>
       {fileName ? (
-        <div >
-          <div style={{ float: 'left' }}>{fileName}</div>
-          <div style={{ float: 'right', marginLeft: 5, paddingTop: 3 }} onClick={clearFile}><FaTimes className="icon" /></div>
+        <div className="row-filename">
+          <div style={{ float: 'left' }} className="fileName">{fileName}</div>
+          <div
+            style={{ float: 'right', marginLeft: 5, paddingTop: 3 }}
+            className="icon-container"
+          >
+            <FaTimes className="icon" onClick={clearFile} />
+          </div>
         </div>
-      ) : <div> &nbsp; </div>}
+      ) : <div className="row-filename-empty"> &nbsp; </div>}
     </div>
   );
 }
