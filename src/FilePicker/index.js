@@ -90,5 +90,5 @@ FilePicker.propTypes = {
 
 FilePicker.defaultProps = {
   maxSize: 2,
-  extensions: ['application/pdf'],
+  //extensions: ['application/pdf'],
 }
