@@ -1,32 +1,29 @@
+/* eslint-disable react/button-has-type */
 // external imports
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 import { mount, configure } from 'enzyme';
-// local imports
 import FilePicker from '.';
-// configure adapter
 
 configure({ adapter: new Adapter() });
 
-describe('File Picker', () => {
+describe('File Picker Component', () => {
   let onChange;
   let onError;
-  let onClear;
 
   beforeEach(() => {
     onChange = jest.fn();
     onError = jest.fn();
-    onClear = jest.fn();
   });
 
   test('returns a valid component with required props', () => {
-    const ele = (
-      <FilePicker onChange={() => ({})} onError={() => ({})}>
+    const element = (
+      <FilePicker onChange={() => { }} onError={() => { }}>
         <button>Click to upload</button>
       </FilePicker>
     );
 
-    expect(React.isValidElement(ele)).toBe(true);
+    expect(React.isValidElement(element)).toBe(true);
   });
 
   test('call error handler when no file uploaded', () => {
@@ -34,11 +31,11 @@ describe('File Picker', () => {
     const wrapper = mount(
       <FilePicker onChange={onChange} onError={onError}>
         <div>Click here</div>
-      </FilePicker>
+      </FilePicker>,
     );
 
     // trigger the onChange callback on file input
-    wrapper.find('input').simulate('change', { target: { files: [] } })
+    wrapper.find('input').simulate('change', { target: { files: [] } });
 
     expect(onError.mock.calls.length).toBe(1);
     expect(onChange.mock.calls.length).toBe(0);
@@ -50,9 +47,10 @@ describe('File Picker', () => {
       <FilePicker
         onChange={onChange}
         onError={onError}
-        extensions={['application/pdf']}>
+        extensions={['application/pdf']}
+      >
         <div>Click here</div>
-      </FilePicker>
+      </FilePicker>,
     );
 
     const file = new Blob(['file contents'], { type: 'text/plain' });
@@ -66,29 +64,23 @@ describe('File Picker', () => {
   });
 
   test('call error handler when a file that is too large is uploaded', () => {
-    // mount the select with a few options
     const wrapper = mount(
       <FilePicker
         onChange={onChange}
         onError={onError}
-        // set unreasonably small max size so that our tiny blob is too big
         maxSize={0.0000000001}
       >
         <div>Click here</div>
-      </FilePicker>
+      </FilePicker>,
     );
-
-    const file = new Blob(['file contents'], { type: 'text/plain' })
-
-    // trigger the onChange callback on file input
-    wrapper.find('input').simulate('change', { target: { files: [file] } })
+    const file = new Blob(['file contents'], { type: 'text/plain' });
+    wrapper.find('input').simulate('change', { target: { files: [file] } });
 
     expect(onError.mock.calls.length).toBe(1);
     expect(onChange.mock.calls.length).toBe(0);
   });
 
   test('call change handler when a file with correct size and extension is uploaded', () => {
-    // mount the select with a few options
     const wrapper = mount(
       <FilePicker
         onChange={onChange}
@@ -97,7 +89,7 @@ describe('File Picker', () => {
         maxSize={1}
       >
         <div>Click here</div>
-      </FilePicker>
+      </FilePicker>,
     );
 
     const file = new Blob(['file contents'], { type: 'text/plain' });
@@ -110,35 +102,7 @@ describe('File Picker', () => {
     expect(onChange.mock.calls.length).toBe(1);
   });
 
-  test('call onClear handler when triggerReset is called', () => {
-    let clear = { bob: 'bob' };
-    // mount the select with a few options
-    const wrapper = mount(
-      <FilePicker
-        onChange={onChange}
-        onError={onError}
-        maxSize={1}
-        onClear={onClear}
-        triggerReset={clear}
-      >
-        <div>Click here</div>
-      </FilePicker>
-    );
-
-    const file = new Blob(['file contents'], { type: 'text/plain' });
-    file.name = 'file.txt';
-    clear = { batty: "batty" }
-
-    // trigger the onChange callback on file input
-    wrapper.find('input').simulate('change', { target: { files: [file] } });
-
-    expect(onClear.mock.calls.length).toBe(1);
-  });
-
-
   test('check button text matches buttonText prop', () => {
-    let clear = { bob: 'bob' };
-    // mount the select with a few options
     const wrapper = mount(
       <FilePicker
         buttonText="Upload a file!"
@@ -147,7 +111,7 @@ describe('File Picker', () => {
         maxSize={1}
       >
         <div>Click here</div>
-      </FilePicker>
+      </FilePicker>,
     );
 
     const file = new Blob(['file contents'], { type: 'text/plain' });
@@ -158,8 +122,6 @@ describe('File Picker', () => {
   });
 
   test('check button text matches wrapped div', () => {
-    let clear = { bob: 'bob' };
-    // mount the select with a few options
     const wrapper = mount(
       <FilePicker
         onChange={onChange}
@@ -167,7 +129,7 @@ describe('File Picker', () => {
         maxSize={1}
       >
         <div className="input-button">Click here</div>
-      </FilePicker>
+      </FilePicker>,
     );
 
     const file = new Blob(['file contents'], { type: 'text/plain' });
