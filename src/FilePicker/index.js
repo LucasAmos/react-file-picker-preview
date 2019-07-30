@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { FaTimes } from 'react-icons/fa';
 import PropTypes from 'prop-types';
@@ -7,6 +7,7 @@ import './Index.css';
 
 export default function FilePicker(props) {
   const [fileName, setFileName] = useState(null);
+  const isInitialMount = useRef(true);
 
   const {
     className, style, buttonText, onError, onChange, maxSize,
@@ -21,8 +22,12 @@ export default function FilePicker(props) {
   }
 
   useEffect(() => {
-    clearFile(
-    );
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      clearFile(
+      );
+    }
   }, [triggerReset]);
 
   function validate(file) {
