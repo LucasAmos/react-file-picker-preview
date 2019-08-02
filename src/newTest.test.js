@@ -6,7 +6,6 @@ import { FilePicker } from './index';
 
 configure({ adapter: new Adapter() });
 
-
 const demo = (
   <FilePicker
     test="file-picker"
@@ -16,7 +15,7 @@ const demo = (
     extensions={['application/pdf']}
     onChange={file => console.log('changed')}
     onError={(errMsg) => { alert(`that's an error: ${errMsg}`); }}
-    onClear={(e) => { console.log('cleared') }}
+    onClear={() => { console.log('cleared') }}
   >
     <div className="input-button" type="button">
       Dee file picker
@@ -27,6 +26,8 @@ const demo = (
 describe('FilePicker component', () => {
   let savedError;
   let savedWarn;
+
+
   beforeEach(() => {
     savedError = console.error;
     console.error = jest.fn();
@@ -50,12 +51,24 @@ describe('FilePicker component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('File selector works correctly', () => {
+  it('File name is populated correctly', () => {
+    const wrapper = mount(demo);
+    const file = new Blob(['file contents'], { type: 'text/plain' });
+    file.name = 'file.txt';
+    wrapper.find('input').simulate('change', { target: { files: [file] } });
+    expect(wrapper.find('.fileName').contains("file.txt")).toEqual(true);
+  });
+
+  it('File name is cleared correctly', () => {
     const wrapper = mount(demo);
     const file = new Blob(['file contents'], { type: 'text/plain' });
     file.name = 'file.txt';
     wrapper.find('input').simulate('change', { target: { files: [file] } });
 
+    expect(wrapper.find('.fileName').contains("file.txt")).toEqual(true);
+    wrapper.find('.icon').first().simulate('click').debug();
+    expect(wrapper.find('.fileName').contains("file.txt")).toEqual(false);
     console.log(wrapper.debug());
+    // expect(onClear.mock.calls.length).toBe(3);
   });
 });
