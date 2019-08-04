@@ -6,13 +6,13 @@
   "module": "lib/index.js",
   "scripts": {
     "__internal__prettier": "prettier 'src/**/*.js*'",
-    "build": "webpack --config config/webpack.js && cp README.md lib/README.md",
+    "build": "webpack --config config/webpack.js",
     "clean": "rm -rf index.* lib/",
     "format": "npm run __internal__prettier -- --write",
     "format:check": "npm run __internal__prettier -- --list-different",
     "lint": "eslint src/**/*.js",
     "prepublish": "npm run build",
-    "test": "NODE_ENV=test jest",
+    "test": "set NODE_ENV=test && jest --collect-coverage",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
     "test:coverage:report": "npm run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

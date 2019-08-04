@@ -43,7 +43,6 @@ export default function FilePicker(props) {
       return;
     }
     // return native file object
-    setFileName(file.name);
     if (extensions) {
       const uploadedFileExt = file.type;
       const isValidFileExt = extensions
@@ -55,6 +54,7 @@ export default function FilePicker(props) {
         return;
       }
     }
+    setFileName(file.name);
     onChange(file);
   }
 
