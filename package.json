@@ -12,7 +12,7 @@
     "format:check": "npm run __internal__prettier -- --list-different",
     "lint": "eslint src/**/*.js",
     "prepublish": "npm run build",
-    "test": "set NODE_ENV=test && jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test": "set NODE_ENV=test && jest --collect-coverage",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
     "test:coverage:report": "npm run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
@@ -32,7 +32,6 @@
     "@babel/runtime": "^7.4.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.5",
-    "coveralls": "^3.0.6",
     "enzyme": "^3.10.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
