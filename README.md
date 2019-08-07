@@ -1,7 +1,7 @@
 # react-file-picker-simple
 
-[![Build Status](https://travis-ci.org/meinstein/react-file-picker.svg?branch=master)](https://travis-ci.org/meinstein/react-file-picker)
-[![Coverage Status](https://coveralls.io/repos/github/meinstein/react-file-picker/badge.svg?branch=master)](https://coveralls.io/github/meinstein/react-file-picker?branch=master)
+[![Build Status](https://travis-ci.org/meinstein/react-file-picker.svg?branch=master)](https://travis-ci.org/LucasAmos/react-file-picker-simple)
+[![Coverage Status](https://coveralls.io/repos/github/LucasAmos/react-file-picker-simple/badge.svg?branch=master)](https://coveralls.io/github/LucasAmos/react-file-picker-simple?branch=master)
 [![npm](https://img.shields.io/npm/v/react-file-picker.svg)](https://www.npmjs.com/package/react-file-picker)
 
 Sensible file input wrappers. Demo included.
