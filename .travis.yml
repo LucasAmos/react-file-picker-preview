@@ -11,4 +11,4 @@ cache:
     - node_modules
 
 script:
-  - npm run test:coverage:report
+  - npm run test
