@@ -160,15 +160,14 @@ describe('File Picker Component', () => {
 
   it('File name is cleared correctly', () => {
     const wrapper = mount(element);
-    const file = new Blob(['file contents'], { type: 'text/plain' });
+    const file = new Blob(['file contents'], { type: 'application/pdf' });
     file.name = 'file.txt';
     wrapper.find('input').simulate('change', { target: { files: [file] } });
-
+    //console.log(wrapper.debug());
     expect(wrapper.find('.fileName').contains('file.txt')).toEqual(true);
     expect(onClear.mock.calls.length).toBe(0);
     wrapper.find('.icon').first().simulate('click').debug();
     expect(wrapper.find('.fileName').contains('file.txt')).toEqual(false);
-    //console.log(wrapper.debug());
     expect(onClear.mock.calls.length).toBe(1);
   });
 });
