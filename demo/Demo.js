@@ -13,12 +13,12 @@ class Demo extends React.Component {
     const { file } = this.state;
 
     return (
-      <div className="app" >
+      <div className="app">
         <header className="App-header">
           <code>React-Simple-File-Picker</code>
-          <div onClick={() => {
+          <div className="clear" onClick={() => {
             this.setState({ reset: Object.assign({}) })
-          }}>clear the picker</div>
+          }}>Click here to clear the picker</div>
           <FilePicker
             className="button"
             maxSize={2}

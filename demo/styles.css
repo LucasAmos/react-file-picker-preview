@@ -1,5 +1,15 @@
-.App {
-    text-align: center;
+.app {
+    text-align: left;
+  }
+
+  .clear {
+    margin-top: 20px;
+    background-color: rgb(216, 216, 216);
+    padding: 8px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
   }
   
   .file-details {
