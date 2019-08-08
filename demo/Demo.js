@@ -13,7 +13,7 @@ class Demo extends React.Component {
     const { file } = this.state;
 
     return (
-      < div className="app" >
+      <div className="app" >
         <header className="App-header">
           <code>React-Simple-File-Picker</code>
           <div onClick={() => {
