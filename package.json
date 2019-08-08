@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "lib/index.js",
   "scripts": {
-    "demo": "parcel demo/index.html",
+    "example": "parcel demo/index.html",
     "__internal__prettier": "prettier 'src/**/*.js*'",
     "build": "webpack --config config/webpack.js && cp README.md lib/README.md",
     "clean": "rm -rf index.* lib/",

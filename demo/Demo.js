@@ -8,10 +8,12 @@ class Demo extends React.Component {
     reset: {},
   }
 
+
   render() {
     const { file } = this.state;
+
     return (
-      <div className="app" >
+      < div className="app" >
         <header className="App-header">
           <code>React-Simple-File-Picker</code>
           <div onClick={() => {
@@ -23,7 +25,7 @@ class Demo extends React.Component {
             buttonText="Upload a file!"
             extensions={["application/pdf"]}
             onChange={(file) => this.setState({ file })}
-            onError={errMsg => { alert("that's an error: " + errMsg) }}
+            onError={error => { alert("that's an error: " + error) }}
             onClear={() => this.setState({ file: {} })}
             triggerReset={this.state.reset}
           >
