@@ -1,0 +1,71 @@
+.App {
+    text-align: center;
+  }
+  
+  .file-details {
+    width: 250px;
+    height: 200px;
+  }
+  
+  .file-details h4 {
+    margin: 7px 0px 7px 0px;
+  }
+  
+  .button {
+    font-family: 'Helvetica';
+    margin: 20px;  
+    min-width: 250px;
+    text-align: center;
+    background-color: white;
+    min-height: 100px;
+    
+  }
+  
+  .button .input-button{
+    border-radius: 5px;
+    border: 1px dashed #d9d9d9;
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .button .input-button:hover {
+    border-color: #72bbffef;
+  }
+  
+  .button .row-filename{
+    font-size: 17px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    float: left;
+    width: 100%;
+  }
+  
+  .button .fileName{
+    padding: 7px;
+  }
+  
+  .button .icon {
+    padding: 7px 5px 0px 7px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .button .row-filename-empty{
+    /* background-color: green;   */
+  }
+  
+  .App-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: rgb(134, 134, 134);
+  }
+  
+  
