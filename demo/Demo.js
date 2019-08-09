@@ -31,15 +31,15 @@ class Demo extends React.Component {
           >
             <div className="input-button" type="button">
               Dee file picker
-      </div>
+            </div>
           </FilePicker>
 
           <div className="file-details">
-            <h3>The file</h3>
-            <h4>Name: {file.name}</h4>
-            <h4>Size: {file.size}{file.size ? ' bytes' : null}</h4>
-            <h4>Type: {file.type}</h4>
-            <h4>Modified: {file.lastModified}</h4>
+            <h3>File details:</h3>
+            <h4>Name: <span>{file.name} </span></h4>
+            <h4>Size: <span>{file.size}{file.size ? ' bytes' : null}</span></h4>
+            <h4>Type: <span>{file.type}</span></h4>
+            <h4>Modified: <span>{file.lastModified}</span></h4>
 
           </div>
 
