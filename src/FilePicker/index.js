@@ -50,7 +50,7 @@ export default function FilePicker(props) {
         .includes(uploadedFileExt);
 
       if (!isValidFileExt) {
-        onError(`Must upload a file of types: ${extensions.join(' or ')}`);
+        onError(`Must upload a file of type: ${extensions.join(' or ')}`);
         return;
       }
     }

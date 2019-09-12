@@ -15,7 +15,7 @@ class Demo extends React.Component {
     return (
       <div className="app">
         <header className="App-header">
-          <code>React-Simple-File-Picker</code>
+          <code>React-File-Picker-Preview</code>
           <div className="clear" onClick={() => {
             this.setState({ reset: Object.assign({}) })
           }}>Click here to clear the picker</div>

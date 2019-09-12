@@ -1,12 +1,13 @@
-# react-file-picker-simple
+# react-file-picker-preview
 
-[![Build Status](https://travis-ci.org/meinstein/react-file-picker.svg?branch=master)](https://travis-ci.org/LucasAmos/react-file-picker-simple)
-[![Coverage Status](https://coveralls.io/repos/github/LucasAmos/react-file-picker-simple/badge.svg?branch=master)](https://coveralls.io/github/LucasAmos/react-file-picker-simple?branch=master)
-[![npm](https://img.shields.io/npm/v/react-file-picker-simple.svg)](https://www.npmjs.com/package/react-file-picker-simple)
+[![Build Status](https://travis-ci.org/meinstein/react-file-picker.svg?branch=master)](https://travis-ci.org/LucasAmos/react-file-picker-preview)
+[![Coverage Status](https://coveralls.io/repos/github/LucasAmos/react-file-picker-preview/badge.svg?branch=master)](https://coveralls.io/github/LucasAmos/react-file-picker-preview?branch=master)
+[![npm](https://img.shields.io/npm/v/react-file-picker-preview)](https://www.npmjs.com/package/react-file-picker-preview)
 
 Simple file with built in preview bar. Easily styled and with default or custom button. Example included.
 
-`npm i react-file-picker-simple`
+`npm i react-file-picker-preview`
+
 
 ## Example
 ```js

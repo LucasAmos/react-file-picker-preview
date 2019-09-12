@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: projectPaths.buildDir,
     filename: 'index.js',
-    library: 'react-file-picker-simple',
+    library: 'react-file-picker-preview',
     libraryTarget: 'umd'
   },
   module: {
