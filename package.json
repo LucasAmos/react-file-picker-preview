@@ -1,6 +1,6 @@
 {
   "name": "react-file-picker-preview",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple file input with filename preview",
   "main": "lib/index.js",
   "module": "lib/index.js",

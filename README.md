@@ -4,9 +4,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/LucasAmos/react-file-picker-preview/badge.svg?branch=master)](https://coveralls.io/github/LucasAmos/react-file-picker-preview?branch=master)
 [![npm](https://img.shields.io/npm/v/react-file-picker-preview)](https://www.npmjs.com/package/react-file-picker-preview)
 
-Simple file with built in preview bar. Easily styled and with default or custom button. Example included.
+Simple file with built in preview bar. Easily styled and with default or custom button. Example included. Demo can be viewed at https://react-file-picker-preview-demo.herokuapp.com/
 
 `npm i react-file-picker-preview`
+
+
 
 
 ## Example
