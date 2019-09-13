@@ -1,6 +1,6 @@
 # react-file-picker-preview
 
-[![Build Status](https://travis-ci.org/meinstein/react-file-picker.svg?branch=master)](https://travis-ci.org/LucasAmos/react-file-picker-preview)
+[![Build Status](https://api.travis-ci.org/lucasamos/react-file-picker-preview.svg?branch=master)](https://travis-ci.org/LucasAmos/react-file-picker-preview)
 [![Coverage Status](https://coveralls.io/repos/github/LucasAmos/react-file-picker-preview/badge.svg?branch=master)](https://coveralls.io/github/LucasAmos/react-file-picker-preview?branch=master)
 [![npm](https://img.shields.io/npm/v/react-file-picker-preview)](https://www.npmjs.com/package/react-file-picker-preview)
 
