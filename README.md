@@ -9,6 +9,15 @@ Simple file with built in preview bar. Easily styled and with default or custom 
 `npm i react-file-picker-preview`
 
 
+### Features
+ - File name preview
+ - Customisable file size limit
+ - Restrict file upload by extension[s]
+ - OnChange, onError and onClear callbacks
+ - Progamatically clear the selected file
+ - Default button or custom element 
+ - Custom className prop
+
 
 
 ## Example
