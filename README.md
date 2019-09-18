@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/LucasAmos/react-file-picker-preview/badge.svg?branch=master)](https://coveralls.io/github/LucasAmos/react-file-picker-preview?branch=master)
 [![npm](https://img.shields.io/npm/v/react-file-picker-preview)](https://www.npmjs.com/package/react-file-picker-preview)
 
-Simple file with built in preview bar. Easily styled and with default or custom button. Example included. Demo can be viewed at https://react-file-picker-preview-demo.herokuapp.com/
+Simple react file picker with built in preview bar. Easily styled and with default or custom file chooser button. Example included. Demo can be viewed at https://react-file-picker-preview-demo.herokuapp.com/
 
 `npm i react-file-picker-preview`
 
@@ -14,7 +14,7 @@ Simple file with built in preview bar. Easily styled and with default or custom 
  - Customisable file size limit
  - Restrict file upload by extension[s]
  - OnChange, onError and onClear callbacks
- - Progamatically clear the selected file
+ - Programmatically clear the selected file
  - Default button or custom element 
  - Custom className prop
 
