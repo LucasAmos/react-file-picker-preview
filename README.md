@@ -23,7 +23,7 @@ Simple react file picker with built in preview bar. Easily styled and with defau
 ## Example
 ```js
 import React from 'react';
-import { FilePicker } from '../lib';
+import { FilePicker } from 'react-file-picker-preview';
 
 class Demo extends React.Component {
   state = {
